@@ -1,11 +1,3 @@
-//https://bitbucket.org/jasonjimnz/workspace/snippets/jE7bqp
-
-const speechRec  = window.webkitSpeechRecognition || window.SpeechRecognition
-const recognizer = new speechRec()
-const btnStart   = document.querySelector('#start')
-const stateVal   = document.querySelector('.state')
-const language   = document.querySelector('#language')
-
 const setLang    = (lang) => {
   recognizer.lan = lang
   console.log(`setted lang: ${lang}`);
@@ -43,5 +35,3 @@ const startLis   = () => {
     recognizer.stop()
   }
 }
-
-btnStart.onclick = startLis

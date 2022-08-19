@@ -2,14 +2,24 @@
 
 const speechRec  = window.webkitSpeechRecognition || window.SpeechRecognition
 const recognizer = new speechRec()
+const btnStart   = document.querySelector('#start')
 
-const defLang    = (lang) => {
+const setLang    = (lang) => {
   recognizer.lan = lang
   console.log(`setted lang: ${lang}`);
 }
 
-const startRec   = () => {
-  defLang('es')
+const setStatus  = (state) => {
+  document.querySelector('.state').innerHTML=`${state}...`
+
+  setTimeout(() => {
+    document.querySelector('#start').value="STOP"
+  }, 500)
+}
+
+const startLis   = () => {
+  setLang('es')
+  setStatus(states.lis)
 
   recognizer.onresult = event => {
     for (const result of event.results) console.log(result)
@@ -18,4 +28,4 @@ const startRec   = () => {
   recognizer.start()
 }
 
-startRec()
+btnStart.onclick = startLis

@@ -32,6 +32,11 @@ main.recording {
   justify-content: center;
 }
 
+.state {
+  font-size: 11px;
+  animation: fade infinite 3000ms;
+}
+
 #language {
   width: 70px;
   border: none;
@@ -39,4 +44,31 @@ main.recording {
   border-bottom: 1px solid rgba(0,0,0,.45);
   padding: 5px;
   border-radius: 5px 5px 0 0;
+}
+
+#start {
+  transition: 500ms;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0,0,0,.45);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#start:focus {
+  transition: 500ms;
+  background-color: beige;
+  border-color: rgba(0,0,0,.95);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .01;
+  }
+  100% {
+    opacity: .7;
+  }
 }

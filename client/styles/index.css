@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: blue;
+  color: aliceblue;
+}
+
+main {
+  width: 100%;
+  height: 90vh;
+}
+
+header, main.normal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.recording {
+  display: flex;
+  justify-content: center;
+}
+
+#language {
+  width: 70px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(0,0,0,.45);
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+}

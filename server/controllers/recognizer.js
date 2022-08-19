@@ -25,11 +25,13 @@ const startLis   = () => {
       setStatus(states.lis, btnVal.stp)
 
       recognizer.onresult = event => {
-        for (const result of event.results) console.log(result)
+        for (const result of event.results) {
+          response.innerHTML=result[0].transcript
+          console.log(result[0].transcript)
+        }
       }
       recognizer.start()
     }
-    
   } else {
     setStatus(states.fns, btnVal.str)
     recognizer.stop()

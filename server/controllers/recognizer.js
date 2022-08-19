@@ -3,29 +3,45 @@
 const speechRec  = window.webkitSpeechRecognition || window.SpeechRecognition
 const recognizer = new speechRec()
 const btnStart   = document.querySelector('#start')
+const stateVal   = document.querySelector('.state')
+const language   = document.querySelector('#language')
 
 const setLang    = (lang) => {
   recognizer.lan = lang
   console.log(`setted lang: ${lang}`);
 }
 
-const setStatus  = (state) => {
-  document.querySelector('.state').innerHTML=`${state}...`
+const setStatus  = (state,btn) => {
+  state==states.lis ?
+  stateVal.setAttribute('class', 'state animated') :
+  stateVal.setAttribute('class', 'state')
+
+  stateVal.innerHTML=`${state}`
 
   setTimeout(() => {
-    document.querySelector('#start').value="STOP"
+    btnStart.value=btn
   }, 500)
 }
 
 const startLis   = () => {
-  setLang('es')
-  setStatus(states.lis)
+  var stateBtn   = btnStart.value
+  if (stateBtn == btnVal.str) {
+    if (language.value==0) {
+      alert('You should set a valid language first')
+    } else {
+      setLang(language.value)
+      setStatus(states.lis, btnVal.stp)
 
-  recognizer.onresult = event => {
-    for (const result of event.results) console.log(result)
+      recognizer.onresult = event => {
+        for (const result of event.results) console.log(result)
+      }
+      recognizer.start()
+    }
+    
+  } else {
+    setStatus(states.fns, btnVal.str)
+    recognizer.stop()
   }
-
-  recognizer.start()
 }
 
 btnStart.onclick = startLis

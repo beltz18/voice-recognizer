@@ -34,6 +34,9 @@ main.recording {
 
 .state {
   font-size: 11px;
+}
+
+.animated {
   animation: fade infinite 3000ms;
 }
 
@@ -57,7 +60,6 @@ main.recording {
 
 #start:focus {
   transition: 500ms;
-  background-color: beige;
   border-color: rgba(0,0,0,.95);
 }
 

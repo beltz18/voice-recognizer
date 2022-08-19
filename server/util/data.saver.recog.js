@@ -6,4 +6,9 @@ var states = {
   "fns": "Finished"
 }
 
+var btnVal = {
+  "str": "START",
+  "stp": "STOP"
+}
+
 var data_recorded = { }

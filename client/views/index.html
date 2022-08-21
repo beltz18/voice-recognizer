@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
+  <div id="particles-js"></div>
+  <script type="text/javascript" src="../js/particles.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
   <header>
-    <h1>Voice Recognizer</h1>
+    <h1>Voice <span>Rec</span>ognizer</h1>
   </header>
 
   <main class="normal">
     <div class="rec">
-      <h1>Start the voice Recognizer!</h1>
+      <h2 class="start">Start the voice Recognizer!</h2>
       <span class="state"></span>
       <select id="language">
         <option value="0">Lang</option>
@@ -25,6 +28,10 @@
       <input type="button" id="start" value="START" onclick="startLis()">
       <p class="response"></p>
     </div>
+    <div>
+      <h2 class="record">Im listening</h2>
+    </div>
+    <div class="writing"></div>
   </main>
 </body>
 <script src="../../server/util/init.js"></script>

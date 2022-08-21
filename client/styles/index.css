@@ -1,19 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
+#particles-js {
+  position: absolute;
+  height: 100%;
+  background: #000;
+  object-fit: cover;
+  mix-blend-mode: screen;
+}
+
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 10vh;
-  background-color: blue;
-  color: aliceblue;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,10,235,1) 50%, rgba(0,212,255,1) 100%);color: aliceblue;
+  pointer-events: none;
+}
+
+.start {
+  position: absolute;
+  top: 43%;
+  left: 37.5%;
+  color: #fff;
+  pointer-events: none;
+}
+
+header span {
+  color: rgb(255, 0, 0)
 }
 
 main {
@@ -32,12 +61,31 @@ main.recording {
   justify-content: center;
 }
 
+.record {
+  display: none;
+}
+
+.writing {
+  display: none;
+  position: absolute;
+  top: 36%;
+  left: 37.5;
+  height: 40%;
+  width: 45%;
+  background: #fff;
+  border: 2px solid gray;
+  border-radius: 5%;
+}
+
 .state {
   font-size: 11px;
 }
 
 .animated {
+  color: #fff;
   animation: fade infinite 3000ms;
+  z-index: 100;
+  margin-left: 10px;
 }
 
 #language {
@@ -47,6 +95,14 @@ main.recording {
   border-bottom: 1px solid rgba(0,0,0,.45);
   padding: 5px;
   border-radius: 5px 5px 0 0;
+}
+
+.rec {
+  z-index: 100;
+}
+
+.rec-off {
+  display: none;
 }
 
 #start {

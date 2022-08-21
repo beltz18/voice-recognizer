@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognizer</title>
+  <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+  <header>
+    <h1>Voice Recognizer</h1>
+  </header>
+
+  <main class="normal">
+    <div class="rec">
+      <h1>Start the voice Recognizer!</h1>
+      <span class="state"></span>
+      <select id="language">
+        <option value="0">Lang</option>
+        <option value="es-ES">Spanish - Spain</option>
+        <option value="es">Spanish - Normal</option>
+        <option value="en">English</option>
+      </select>
+      <input type="button" id="start" value="START" onclick="startLis()">
+      <p class="response"></p>
+    </div>
+  </main>
+</body>
+<script src="../../server/util/init.js"></script>
+<script src="../../server/util/data.saver.recog.js"></script>
+<script src="../../server/controllers/recognizer.js"></script>
+</html>

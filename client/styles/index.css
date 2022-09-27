@@ -131,6 +131,11 @@ main.recording {
   border-color: rgba(0,0,0,.95);
 }
 
+.response {
+  padding: 20px;
+  background-color: azure;
+}
+
 @keyframes fade {
   0% {
     opacity: 1;

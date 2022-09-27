@@ -1,6 +1,8 @@
 const setLang    = (lang) => {
-  recognizer.lan = lang
-  console.log(`setted lang: ${lang}`);
+  recognizer.lan       = lang
+  recognizer.continous = true
+  recognizer.interim   = true
+  console.log(`setted lang: ${lang}`)
 }
 
 const setStatus  = (state,btn) => {
@@ -27,15 +29,12 @@ const startLis   = () => {
       setStatus(states.lis, btnVal.stp)
 
       recognizer.onresult = (event) => {
-        console.log(event)
-        console.log(event)
         for (const result of event.results) {
           response.innerHTML=result[0].transcript
           console.log(result[0].transcript)
         }
       }
       recognizer.start()
-      console.log(recognizer)
     }
   } else {
     setStatus(states.fns, btnVal.str)

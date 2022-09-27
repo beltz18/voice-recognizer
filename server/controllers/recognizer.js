@@ -4,8 +4,10 @@ const setLang    = (lang) => {
 }
 
 const setStatus  = (state,btn) => {
-  state==states.lis ?
-  stateVal.setAttribute('class', 'state animated') :
+  state==states.lis
+    ?
+  stateVal.setAttribute('class', 'state animated')
+    :
   stateVal.setAttribute('class', 'state')
 
   stateVal.innerHTML=`${state}`
@@ -24,13 +26,16 @@ const startLis   = () => {
       setLang(language.value)
       setStatus(states.lis, btnVal.stp)
 
-      recognizer.onresult = event => {
+      recognizer.onresult = (event) => {
+        console.log(event)
+        console.log(event)
         for (const result of event.results) {
           response.innerHTML=result[0].transcript
           console.log(result[0].transcript)
         }
       }
       recognizer.start()
+      console.log(recognizer)
     }
   } else {
     setStatus(states.fns, btnVal.str)
